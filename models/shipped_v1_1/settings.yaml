@@ -1,0 +1,28 @@
+min_cell_firms: 5            # domestic firms needed for a cell
+min_mcap_usd: 20000000       # spike proxy for "listed and real" (cell membership)
+go_min_cells: 100            # Week 1 go/no-go: cells (of 128) meeting min_cell_firms
+top_n_per_cell: 25           # firms per cell by market cap
+min_fy_consecutive: 4        # gate 2: consecutive fiscal years with revenue > 0
+gate2_min_cells: 70          # gate 2 stop thresholds
+gate2_min_countries_2cells: 25
+filing_lag_days: 120         # as_of_date = fiscal_year_end + lag; per-country override in countries.yaml
+fy_cutoff_month: 6           # fiscal_year = year of FYE if FYE month >= 6 else year - 1 (Compustat-style)
+firm_growth_floor:
+  min_prior_revenue_usd: 10000000   # prior-year revenue (USD-equivalent) needed before a firm contributes a growth value
+  winsorize: [0.01, 0.99]           # firm-level growth winsorised before taking the cell median
+# Panel timing: decision date D_t = Sep 30 of year t+1 (all firms' FY t are public by then); features use as_of_date <= D_t.
+asof_decision: {month: 9, day: 30, year_offset: 1}
+as_of_years: [2019, 2020, 2021, 2022, 2023, 2024, 2025]   # 2025 = live as-of (no target: FY2026 not available)
+fetch_top_n: 60              # financials fetched for up to this many firms per cell (by CURRENT cap); panel re-ranks by FY t revenue
+concentration_flag: 0.6      # top-1 revenue share above this -> cell flagged concentrated (low confidence)
+# As-of revenue floor for cell membership (replaces the $100M current-cap proposal). From the CA-VAN FY2023 revenue distribution
+# (USD): VAN median $4.4M, p75 $25M, 74% below $25M; TOR median $336M, 13% below $25M. $25M keeps ~26% of VAN and ~87% of TOR.
+min_asof_revenue_usd: 25000000
+exclude_from_training: [TR]  # primary run: TR scored with low-confidence flag, not trained on; evaluation also run with TR
+cv:
+  leave_country_out: true
+  leave_region_out: true            # regions from countries.yaml, recorded in the panel
+  report_with_and_without: [TR]     # every evaluation reported with and without these countries
+low_confidence_countries: [TR]      # all cells flagged low confidence
+drop_from_panel: [TW]   # Taiwan: no World Bank structural macro (GDP, population, internet...), IMF gives only inflation/GDP growth/current account.
+                        # The time-boxed IMF/DGBAS fallback is not clean enough for the model, so Taiwan is dropped (Week 3 decision).

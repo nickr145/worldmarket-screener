@@ -1,0 +1,30 @@
+# Reporting currency -> country whose CPI deflates it and whose official rate converts it to USD.
+# EUR uses the euro-area aggregate (WB code EMU) for CPI and Germany's PA.NUS.FCRF series for the rate.
+# TWD: World Bank has no Taiwan; CPI chains from IMF inflation, FX from yfinance (TWD=X) annual mean.
+USD: {cpi: USA, fx: USA}
+EUR: {cpi: EMU, fx: DEU}
+GBP: {cpi: GBR, fx: GBR}
+AUD: {cpi: AUS, fx: AUS}
+BRL: {cpi: BRA, fx: BRA}
+CAD: {cpi: CAN, fx: CAN}
+CHF: {cpi: CHE, fx: CHE}
+CLP: {cpi: CHL, fx: CHL}
+CNY: {cpi: CHN, fx: CHN}
+HKD: {cpi: HKG, fx: HKG}
+IDR: {cpi: IDN, fx: IDN}
+ILS: {cpi: ISR, fx: ISR}
+INR: {cpi: IND, fx: IND}
+JPY: {cpi: JPN, fx: JPN}
+KRW: {cpi: KOR, fx: KOR}
+MXN: {cpi: MEX, fx: MEX}
+MYR: {cpi: MYS, fx: MYS}
+NOK: {cpi: NOR, fx: NOR}
+NZD: {cpi: NZL, fx: NZL}
+PLN: {cpi: POL, fx: POL}
+SAR: {cpi: SAU, fx: SAU}
+SEK: {cpi: SWE, fx: SWE}
+SGD: {cpi: SGP, fx: SGP}
+THB: {cpi: THA, fx: THA}
+TRY: {cpi: TUR, fx: TUR}
+TWD: {cpi: TWN, fx: TWN}
+ZAR: {cpi: ZAF, fx: ZAF}

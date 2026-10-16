@@ -1,0 +1,57 @@
+# Listing universe. code = yfinance screener region; exchanges = PRIMARY venues only
+# (no OTC, no secondary/regional venues, no Frankfurt/BSE-style duplicate venues).
+# name = domicile name as yfinance reports it in Ticker.info["country"]; aliases are extra accepted spellings.
+# Firm is "domestic" only if domicile == the listing country (HK-listed mainland firms are NOT HK-domestic).
+# NO (Norway) and NZ (New Zealand) were added by me (not requested) to fill the planned count of 37 after the original
+# list of countries was never specified; both have listed-market depth in the screener (NZ is thin: 2 of 4 cells fail).
+# Per-country optional keys: filing_lag_days (default settings.yaml), exclude_ticker_regex, hyperinflation_accounting,
+# aliases (extra accepted spellings of the country's own domicile). Domicile strings in the universe that matched no
+# country name are all OTHER countries/offshore jurisdictions (Ireland, Denmark, Luxembourg, Cayman Islands, BVI, Jersey,
+# Guernsey, Bermuda, Macau, Mauritius, Uruguay, ...). No spelling variants of a country's own name occur, so every
+# aliases list is empty. Jersey/Guernsey are deliberately NOT treated as GB-domestic.
+dropped_countries:
+  AE: screener returned zero firms in all four industries (yfinance data gap); not backfilled from exchange files
+  CO: same as AE
+  EG: same as AE
+  PH: same as AE
+  VN: same as AE
+  IE: screener region 'ie' exists but returns zero firms (revenue>0, mcap>$20M, Euronext Dublin) in all four industries; not backfilled
+  NG: no yfinance screener region exists (Nigeria)
+  KE: no yfinance screener region exists (Kenya)
+countries:
+  US: {name: United States, iso3: USA, region: North America, exchanges: [NMS, NYQ, NGM, NCM, ASE], aliases: []}
+  CA: {name: Canada, iso3: CAN, region: North America, exchanges: [TOR, VAN], aliases: []}
+  MX: {name: Mexico, iso3: MEX, region: Latin America, exchanges: [MEX], aliases: []}
+  BR: {name: Brazil, iso3: BRA, region: Latin America, exchanges: [SAO], aliases: []}
+  AR: {name: Argentina, iso3: ARG, region: Latin America, exchanges: [BUE], aliases: [], hyperinflation_accounting: true}
+  CL: {name: Chile, iso3: CHL, region: Latin America, exchanges: [SGO], aliases: []}
+  GB: {name: United Kingdom, iso3: GBR, region: Europe, exchanges: [LSE], aliases: []}
+  DE: {name: Germany, iso3: DEU, region: Europe, exchanges: [GER], aliases: []}
+  FR: {name: France, iso3: FRA, region: Europe, exchanges: [PAR], aliases: []}
+  NL: {name: Netherlands, iso3: NLD, region: Europe, exchanges: [AMS], aliases: []}
+  CH: {name: Switzerland, iso3: CHE, region: Europe, exchanges: [EBS], aliases: []}
+  SE: {name: Sweden, iso3: SWE, region: Europe, exchanges: [STO], aliases: []}
+  "NO": {name: Norway, iso3: NOR, region: Europe, exchanges: [OSL], aliases: []}
+  PL: {name: Poland, iso3: POL, region: Europe, exchanges: [WSE], aliases: []}
+  ES: {name: Spain, iso3: ESP, region: Europe, exchanges: [MCE], aliases: []}
+  IT: {name: Italy, iso3: ITA, region: Europe, exchanges: [MIL], aliases: []}
+  # IAS 29: figures are restated into year-end purchasing power, so CPI-deflating them double-counts inflation,
+  # and mixed pre/post-restatement periods create artificial growth jumps. TR (and AR) revenue is NOT CPI-deflated
+  # until we verify what yfinance returns (see reports/tr_restatement_check.csv); all TR cells are low confidence;
+  # every evaluation runs with and without TR.
+  TR: {name: Turkey, iso3: TUR, region: Middle East & Africa, exchanges: [IST], aliases: [], hyperinflation_accounting: true}
+  IL: {name: Israel, iso3: ISR, region: Middle East & Africa, exchanges: [TLV], aliases: []}
+  SA: {name: Saudi Arabia, iso3: SAU, region: Middle East & Africa, exchanges: [SAU], aliases: []}
+  ZA: {name: South Africa, iso3: ZAF, region: Middle East & Africa, exchanges: [JNB], aliases: []}
+  IN: {name: India, iso3: IND, region: Asia-Pacific, exchanges: [NSI], aliases: []}
+  CN: {name: China, iso3: CHN, region: Asia-Pacific, exchanges: [SHH, SHZ], aliases: []}
+  HK: {name: Hong Kong, iso3: HKG, region: Asia-Pacific, exchanges: [HKG], aliases: []}
+  TW: {name: Taiwan, iso3: TWN, region: Asia-Pacific, exchanges: [TAI, TWO], aliases: []}
+  JP: {name: Japan, iso3: JPN, region: Asia-Pacific, exchanges: [JPX], aliases: []}
+  KR: {name: South Korea, assume_domestic_if_unresolved: true, iso3: KOR, region: Asia-Pacific, exchanges: [KSC, KOE], aliases: []}
+  SG: {name: Singapore, iso3: SGP, region: Asia-Pacific, exchanges: [SES], aliases: []}
+  ID: {name: Indonesia, iso3: IDN, region: Asia-Pacific, exchanges: [JKT], aliases: []}
+  MY: {name: Malaysia, iso3: MYS, region: Asia-Pacific, exchanges: [KLS], aliases: []}
+  TH: {name: Thailand, iso3: THA, region: Asia-Pacific, exchanges: [SET], aliases: [], exclude_ticker_regex: '-[RF]\.BK$'}
+  AU: {name: Australia, iso3: AUS, region: Asia-Pacific, exchanges: [ASX], aliases: []}
+  NZ: {name: New Zealand, iso3: NZL, region: Asia-Pacific, exchanges: [NZE], aliases: []}

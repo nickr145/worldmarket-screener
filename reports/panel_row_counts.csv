@@ -1,0 +1,5 @@
+target,variant,rows,rows_trainable(no TR),countries,countries_no_TR,asof_2022,asof_2023,asof_2024
+target_h1,with trailing growth,189,181,30,29,0,92,97
+target_h1,no trailing growth,286,274,30,29,93,95,97
+target_h2,with trailing growth,92,88,30,29,0,92,0
+target_h2,no trailing growth,188,180,30,29,93,95,0

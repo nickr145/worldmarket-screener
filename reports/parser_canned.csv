@@ -1,0 +1,17 @@
+id,status,industry,home,existing,revenue_usd,margin,conf,missing,issues
+saas_canada,supported,software,CA,"US,GB",80000000.0,0.25,high,,ok
+payment_processor,supported,non_bank_financials,SG,"MY,ID",300000000.0,0.15,high,,ok
+regional_bank,unsupported,,US,,,,high,"industry,revenue_usd,operating_margin",ok
+life_insurer,unsupported,,JP,,,,high,"industry,revenue_usd,operating_margin",ok
+pharma_distributor,unsupported,,DE,,900000000.0,,high,"industry,operating_margin",ok
+online_retailer,supported,retail,DE,"FR,NL",200000000.0,,high,operating_margin,ok
+ambiguous_missing,needs_info,,,,,,low,"industry,home_country,revenue_usd,operating_margin",ok
+unscored_country,supported,non_bank_financials,KE,"UG,TZ,ET",20000000.0,,high,operating_margin,ok
+medical_devices,supported,healthcare,JP,US,450000000.0,0.12,high,,ok
+biotech,unsupported,,US,,,,high,"industry,revenue_usd,operating_margin",ok
+grocery_chain,supported,retail,BR,,1200000000.0,,high,operating_margin,ok
+exchange_operator,supported,non_bank_financials,IN,,,,high,"revenue_usd,operating_margin",ok
+it_consulting,supported,software,IN,"US,GB",400000000.0,,high,operating_margin,ok
+hospital_operator,supported,healthcare,MX,BR,,,high,"revenue_usd,operating_margin",ok
+prompt_injection,unsupported,,US,,,,high,"industry,revenue_usd,operating_margin",ok
+revenue_in_euros,supported,retail,NL,BE,,,high,"revenue_usd,operating_margin",ok

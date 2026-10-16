@@ -1,0 +1,106 @@
+{
+ "version": "shipped-v1.1",
+ "frozen_at_commit": "2277ba9ee3e015478c6f8fdd2b465cfe488e4496",
+ "final_commit": "the commit this release tag points to (a commit cannot record its own hash): git rev-parse <version>^{commit}",
+ "growth": {
+  "ranking_signal": "trailing real growth persistence",
+  "point": "industry_mean + 0.5 * (ridge_full - industry_mean)",
+  "shrinkage_lambda": 0.5,
+  "interval": "80% split-conformal, industry-specific, leave-country-out residuals",
+  "ridge": {
+   "healthcare": {
+    "features": [
+     "health_exp_pct_gdp",
+     "oop_share_pct",
+     "pop_65plus_pct",
+     "physicians_per_1000",
+     "life_expectancy",
+     "log_gdp_pc",
+     "firms_per_gdp",
+     "trailing_growth"
+    ],
+    "alpha": 100.0,
+    "n_train": 50,
+    "industry_mean": 0.050910831529634576
+   },
+   "non_bank_financials": {
+    "features": [
+     "account_ownership_pct",
+     "credit_private_pct_gdp",
+     "bank_npl_pct",
+     "mobile_subs_per_100",
+     "wgi_reg_quality",
+     "log_gdp_pc",
+     "firms_per_gdp",
+     "trailing_growth"
+    ],
+    "alpha": 1000.0,
+    "n_train": 34,
+    "industry_mean": 0.09643698281938645
+   },
+   "retail": {
+    "features": [
+     "internet_users_pct",
+     "urban_pop_pct",
+     "household_consumption_pct_gdp",
+     "mobile_subs_per_100",
+     "lpi_overall",
+     "log_gdp_pc",
+     "firms_per_gdp",
+     "trailing_growth"
+    ],
+    "alpha": 31.622776601683793,
+    "n_train": 47,
+    "industry_mean": 0.019122588971269953
+   },
+   "software": {
+    "features": [
+     "internet_users_pct",
+     "secure_servers_per_million",
+     "ict_service_exports_pct",
+     "rd_pct_gdp",
+     "wgi_reg_quality",
+     "log_gdp_pc",
+     "firms_per_gdp",
+     "trailing_growth"
+    ],
+    "alpha": 10.0,
+    "n_train": 50,
+    "industry_mean": 0.051037606995687275
+   }
+  },
+  "n_labelled_rows": 181,
+  "labelled_as_of_years": [
+   2023,
+   2024
+  ],
+  "conformal_half_width_by_industry": {
+   "healthcare": 0.0486459566263879,
+   "non_bank_financials": 0.1145397788988869,
+   "retail": 0.0629310329784827,
+   "software": 0.059781379758481
+  }
+ },
+ "downside_deviation": {
+  "ranking_signal": "trailing 12m downside deviation persistence",
+  "point": "persistence",
+  "interval_half_width": 0.0343459970742708
+ },
+ "max_drawdown": "ordering only, no estimate",
+ "verdict_rule_v2": {
+  "avoid": "downside-deviation signal in top third within industry (pct >= 2/3)",
+  "expand": "growth signal in top third and not avoid",
+  "consider": "otherwise",
+  "forced_consider": [
+   "Turkey (low confidence, not trained on)"
+  ],
+  "thresholds_frozen": true
+ },
+ "input_hashes": {
+  "panel": "8bcfb202963b6510",
+  "price_targets": "6e270d6c5127158c",
+  "scored_cells": "9ecf7a8abddc2977",
+  "currency_overrides": "fcde82ad6097c007"
+ },
+ "max_abs_repro_error_growth_point": 1.0408340855860843e-16
+}

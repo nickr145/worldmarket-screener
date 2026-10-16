@@ -1,0 +1,49 @@
+set,target,cv,model,vs,best_rmse_baseline,metric,diff_model_better,lo,hi,favours_model_significantly
+confirmatory 2022-2024,dd_dev_12m,country,xgboost,ridge_trailing_measure,trailing_persistence,rmse,-0.00329251918025128,-0.0064616615186786665,-0.00039552535872466996,False
+confirmatory 2022-2024,dd_dev_12m,country,xgboost,trailing_persistence,trailing_persistence,spearman,-0.18356715796185702,-0.3394395251128024,-0.07218300303638665,False
+confirmatory 2022-2024,dd_dev_12m,country,xgboost,trailing_persistence,trailing_persistence,rmse,-0.0041975419768486635,-0.009093434879504468,0.0005466339686621867,False
+confirmatory 2022-2024,dd_dev_12m,country,lightgbm,ridge_trailing_measure,trailing_persistence,rmse,-0.00256572359164621,-0.0058650726780548924,0.0006095427864296324,False
+confirmatory 2022-2024,dd_dev_12m,country,lightgbm,trailing_persistence,trailing_persistence,spearman,-0.13148085186190894,-0.2990867359548156,-0.012774783955725424,False
+confirmatory 2022-2024,dd_dev_12m,country,lightgbm,trailing_persistence,trailing_persistence,rmse,-0.0034707463882435938,-0.008635350041136528,0.001358949616911322,False
+confirmatory 2022-2024,dd_dev_12m,region,xgboost,ridge_trailing_measure,trailing_persistence,rmse,0.003660517449473176,-0.0043353890723624765,0.013641918606793757,False
+confirmatory 2022-2024,dd_dev_12m,region,xgboost,trailing_persistence,trailing_persistence,spearman,-0.45706198262294656,-0.6225847946099378,-0.2928347318824287,False
+confirmatory 2022-2024,dd_dev_12m,region,xgboost,trailing_persistence,trailing_persistence,rmse,-0.008127903722495888,-0.014261810885260826,-0.0025967997042079705,False
+confirmatory 2022-2024,dd_dev_12m,region,lightgbm,ridge_trailing_measure,trailing_persistence,rmse,0.00336438487821257,-0.004639318738494166,0.013918000091762537,False
+confirmatory 2022-2024,dd_dev_12m,region,lightgbm,trailing_persistence,trailing_persistence,spearman,-0.4877393166980538,-0.6583517199467037,-0.30163959221963194,False
+confirmatory 2022-2024,dd_dev_12m,region,lightgbm,trailing_persistence,trailing_persistence,rmse,-0.008424036293756494,-0.014550436691087047,-0.002635079379659268,False
+confirmatory 2022-2024,mdd_12m,country,xgboost,ridge_trailing_measure,ridge_trailing_measure,rmse,-0.001755583619059739,-0.004526177697794798,0.0008522492464031939,False
+confirmatory 2022-2024,mdd_12m,country,xgboost,trailing_persistence,ridge_trailing_measure,spearman,-0.25496654037353983,-0.45289455474820906,-0.0806146989732426,False
+confirmatory 2022-2024,mdd_12m,country,xgboost,ridge_trailing_measure,ridge_trailing_measure,rmse,-0.001755583619059739,-0.004526177697794798,0.0008522492464031939,False
+confirmatory 2022-2024,mdd_12m,country,lightgbm,ridge_trailing_measure,ridge_trailing_measure,rmse,-0.001723173291711677,-0.003910902775308021,0.0003672380294404231,False
+confirmatory 2022-2024,mdd_12m,country,lightgbm,trailing_persistence,ridge_trailing_measure,spearman,-0.2864756528355912,-0.46160868481284734,-0.11263509286122642,False
+confirmatory 2022-2024,mdd_12m,country,lightgbm,ridge_trailing_measure,ridge_trailing_measure,rmse,-0.001723173291711677,-0.003910902775308021,0.0003672380294404231,False
+confirmatory 2022-2024,mdd_12m,region,xgboost,ridge_trailing_measure,ridge_trailing_measure,rmse,-0.0005282650576789172,-0.0028836220253197304,0.0016192046745305772,False
+confirmatory 2022-2024,mdd_12m,region,xgboost,trailing_persistence,ridge_trailing_measure,spearman,-0.43996892514604913,-0.6337632898147966,-0.2377053623209768,False
+confirmatory 2022-2024,mdd_12m,region,xgboost,ridge_trailing_measure,ridge_trailing_measure,rmse,-0.0005282650576789172,-0.0028836220253197304,0.0016192046745305772,False
+confirmatory 2022-2024,mdd_12m,region,lightgbm,ridge_trailing_measure,ridge_trailing_measure,rmse,-0.0007840221061539004,-0.0026899111643983054,0.0009376106617827351,False
+confirmatory 2022-2024,mdd_12m,region,lightgbm,trailing_persistence,ridge_trailing_measure,spearman,-0.4522868347591241,-0.639095897204745,-0.2509854303467501,False
+confirmatory 2022-2024,mdd_12m,region,lightgbm,ridge_trailing_measure,ridge_trailing_measure,rmse,-0.0007840221061539004,-0.0026899111643983054,0.0009376106617827351,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,country,xgboost,ridge_trailing_measure,industry_mean,rmse,0.0002739125193766956,-0.0018981260253516723,0.0027970628164219274,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,country,xgboost,trailing_persistence,industry_mean,spearman,-0.11330992206725016,-0.32013158669370245,0.10740739347773991,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,country,xgboost,industry_mean,industry_mean,rmse,-0.0006862129991853996,-0.0032566906836038753,0.0021448555456809243,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,country,lightgbm,ridge_trailing_measure,industry_mean,rmse,0.000233263386368171,-0.0019194468734704537,0.0027814888409759394,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,country,lightgbm,trailing_persistence,industry_mean,spearman,-0.13449428423463022,-0.33608731864380764,0.08050425912069245,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,country,lightgbm,industry_mean,industry_mean,rmse,-0.0007268621321939242,-0.0032193047736428495,0.0019592202259892224,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,region,xgboost,ridge_trailing_measure,industry_mean,rmse,0.0022127059156218515,-0.0025174617981466568,0.007431461203670108,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,region,xgboost,trailing_persistence,industry_mean,spearman,-0.2715313695838093,-0.5043543075005129,-0.039048754844278645,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,region,xgboost,industry_mean,industry_mean,rmse,-0.003949122740156859,-0.0074445199667546366,-0.00040223065375292896,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,region,lightgbm,ridge_trailing_measure,industry_mean,rmse,0.002777792159551845,-0.0013647173171577912,0.007484668134803913,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,region,lightgbm,trailing_persistence,industry_mean,spearman,-0.2541549007394107,-0.47020084524113875,-0.028953128717129645,False
+exploratory 2016-2021 (membership_lookahead),dd_dev_12m,region,lightgbm,industry_mean,industry_mean,rmse,-0.003384036496226865,-0.006210354080096333,-0.00010369872276160779,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,country,xgboost,ridge_trailing_measure,industry_mean,rmse,0.004242521868474028,-0.0011367383289307101,0.00920863827589942,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,country,xgboost,trailing_persistence,industry_mean,spearman,0.26004083969073616,0.04517848760350608,0.4637827923436936,True
+exploratory 2016-2021 (membership_lookahead),mdd_12m,country,xgboost,industry_mean,industry_mean,rmse,0.0009886576122638685,-0.004118024349335359,0.006028907557784286,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,country,lightgbm,ridge_trailing_measure,industry_mean,rmse,0.0054148284234627475,-0.0005602930257209727,0.010759695068855449,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,country,lightgbm,trailing_persistence,industry_mean,spearman,0.28977069791729526,0.08850758195509989,0.4927680490127634,True
+exploratory 2016-2021 (membership_lookahead),mdd_12m,country,lightgbm,industry_mean,industry_mean,rmse,0.002160964167252588,-0.003628167485919209,0.007645850570120116,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,region,xgboost,ridge_trailing_measure,industry_mean,rmse,0.0003001248346767571,-0.005179898269584045,0.005691664425853312,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,region,xgboost,trailing_persistence,industry_mean,spearman,0.10991230082582372,-0.1521144861745167,0.3582627956129278,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,region,xgboost,industry_mean,industry_mean,rmse,-0.0037629408817898002,-0.009624632524730843,0.0020752423435397857,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,region,lightgbm,ridge_trailing_measure,industry_mean,rmse,0.0005476740196448115,-0.004690190850717044,0.005717637229484141,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,region,lightgbm,trailing_persistence,industry_mean,spearman,0.11739813274660454,-0.1261035575299712,0.3496151841186522,False
+exploratory 2016-2021 (membership_lookahead),mdd_12m,region,lightgbm,industry_mean,industry_mean,rmse,-0.003515391696821746,-0.008919192646782072,0.0018735687142430197,False

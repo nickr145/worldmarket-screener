@@ -1,0 +1,27 @@
+{
+ "snapshot_date": "2026-10-08",
+ "latest_price_date": "2026-10-08",
+ "pulls": {
+  "financials": {
+   "first": "2026-10-07",
+   "last": "2026-10-08",
+   "files": 3196
+  },
+  "prices": {
+   "first": "2026-10-08",
+   "last": "2026-10-08",
+   "files": 1736
+  },
+  "fx": {
+   "first": "2026-10-08",
+   "last": "2026-10-08",
+   "files": 25
+  },
+  "macro": {
+   "first": "2026-10-07",
+   "last": "2026-10-07",
+   "files": 39
+  }
+ },
+ "note": "Dates are local cache file dates. yfinance revisions after this date are not reflected."
+}

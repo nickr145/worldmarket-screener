@@ -1,0 +1,3 @@
+[client]
+# hides Deploy and the toolbar menu (nothing is set via set_page_config)
+toolbarMode = "minimal"

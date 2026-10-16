@@ -1,0 +1,4 @@
+display_name: Non-bank financial services
+# Excluded: Banks (Banks—Diversified, Banks—Regional) and Insurance (all Insurance— industries, Insurance Brokers),
+# Mortgage Finance, Asset Management and REITs. This is lenders/payments-style credit, exchanges/data, and capital markets.
+yf_industries: [Credit Services, Financial Data & Stock Exchanges, Capital Markets]

@@ -1,0 +1,4 @@
+display_name: Healthcare & pharma
+# include_biotechnology: flag, default decided after the with/without comparison (see PLAN.md Week 2 notes).
+include_biotechnology: false   # decided Week 3: Gate 2 loses 0 cells without it; with-biotech kept as a sensitivity (BIOTECH flag)
+yf_industries: [Drug Manufacturers—General, Drug Manufacturers—Specialty & Generic, Biotechnology, Medical Devices, Medical Instruments & Supplies, Diagnostics & Research, Medical Care Facilities, Healthcare Plans, Health Information Services]

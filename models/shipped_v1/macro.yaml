@@ -1,0 +1,52 @@
+# source: wb (World Bank WDI), wgi (WB source 3), imf (IMF DataMapper / WEO).
+# lag_days: assumed days after the observation-year end (Dec 31) before the value is public; as_of_date = year_end + lag_days.
+# Conservative assumptions, documented in PLAN.md; override per indicator if release calendars are checked.
+start_year: 2008
+end_year: 2025
+indicators:
+  # deflator
+  - {code: FP.CPI.TOTL, name: cpi_index, source: wb, lag_days: 120}
+  - {code: FP.CPI.TOTL.ZG, name: inflation_pct, source: wb, lag_days: 120}
+  # shared
+  - {code: NY.GDP.MKTP.CD, name: gdp_usd, source: wb, lag_days: 180}
+  - {code: NY.GDP.PCAP.CD, name: gdp_pc_usd, source: wb, lag_days: 180}
+  - {code: NY.GDP.MKTP.KD.ZG, name: gdp_growth_pct, source: wb, lag_days: 180}
+  - {code: SP.POP.TOTL, name: population, source: wb, lag_days: 180}
+  - {code: BX.KLT.DINV.WD.GD.ZS, name: fdi_inflow_pct_gdp, source: wb, lag_days: 270}
+  - {code: NE.TRD.GNFS.ZS, name: trade_pct_gdp, source: wb, lag_days: 180}
+  - {code: PA.NUS.FCRF, name: fx_lcu_per_usd, source: wb, lag_days: 60}
+  - {code: SP.URB.TOTL.IN.ZS, name: urban_pop_pct, source: wb, lag_days: 270}
+  - {code: NE.CON.PRVT.ZS, name: household_consumption_pct_gdp, source: wb, lag_days: 180}
+  # digital / financial inclusion (sparse cadence: forward-fill with age feature in the builder)
+  - {code: IT.NET.USER.ZS, name: internet_users_pct, source: wb, lag_days: 365}
+  - {code: IT.CEL.SETS.P2, name: mobile_subs_per_100, source: wb, lag_days: 365}
+  - {code: IT.NET.BBND.P2, name: broadband_per_100, source: wb, lag_days: 365}
+  - {code: IT.NET.SECR.P6, name: secure_servers_per_million, source: wb, lag_days: 365}
+  - {code: FX.OWN.TOTL.ZS, name: account_ownership_pct, source: wb, lag_days: 365}   # Findex, triennial
+  - {code: BX.GSR.CCIS.ZS, name: ict_service_exports_pct, source: wb, lag_days: 365}
+  - {code: GB.XPD.RSDV.GD.ZS, name: rd_pct_gdp, source: wb, lag_days: 365}
+  - {code: SE.TER.ENRR, name: tertiary_enrolment_pct, source: wb, lag_days: 365}
+  - {code: LP.LPI.OVRL.XQ, name: lpi_overall, source: wb, lag_days: 365}              # biennial
+  # financial depth
+  - {code: FS.AST.PRVT.GD.ZS, name: credit_private_pct_gdp, source: wb, lag_days: 270}
+  - {code: FB.AST.NPER.ZS, name: bank_npl_pct, source: wb, lag_days: 270}
+  - {code: GFDD.OI.06, name: bank_concentration_pct, source: wb, lag_days: 365}
+  - {code: BX.TRF.PWKR.DT.GD.ZS, name: remittances_pct_gdp, source: wb, lag_days: 270}
+  # healthcare
+  - {code: SH.XPD.CHEX.GD.ZS, name: health_exp_pct_gdp, source: wb, lag_days: 540}
+  - {code: SH.XPD.CHEX.PC.CD, name: health_exp_pc_usd, source: wb, lag_days: 540}
+  - {code: SH.XPD.OOPC.CH.ZS, name: oop_share_pct, source: wb, lag_days: 540}
+  - {code: SP.POP.65UP.TO.ZS, name: pop_65plus_pct, source: wb, lag_days: 270}
+  - {code: SH.MED.PHYS.ZS, name: physicians_per_1000, source: wb, lag_days: 540}
+  - {code: SH.MED.BEDS.ZS, name: hospital_beds_per_1000, source: wb, lag_days: 540}
+  - {code: SP.DYN.LE00.IN, name: life_expectancy, source: wb, lag_days: 365}
+  # governance (WGI released ~Sept of year+1)
+  - {code: GOV_WGI_RL.EST, name: wgi_rule_of_law, source: wb, lag_days: 270}
+  - {code: GOV_WGI_RQ.EST, name: wgi_reg_quality, source: wb, lag_days: 270}
+  - {code: GOV_WGI_CC.EST, name: wgi_control_corruption, source: wb, lag_days: 270}
+  - {code: GOV_WGI_GE.EST, name: wgi_gov_effectiveness, source: wb, lag_days: 270}
+  # IMF DataMapper (WEO). Only years <= last actual are used; later years are forecasts and excluded by the builder
+  # (WEO vintage is not recorded in the API response, so lag_days is the conservative April-of-next-year release).
+  - {code: PCPIPCH, name: imf_inflation_pct, source: imf, lag_days: 120}
+  - {code: NGDP_RPCH, name: imf_gdp_growth_pct, source: imf, lag_days: 120}
+  - {code: BCA_NGDPD, name: imf_current_account_pct_gdp, source: imf, lag_days: 120}
